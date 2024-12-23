@@ -1,7 +1,0 @@
-openai
-transformers
-torch
-haversine
-pandas
-fastapi
-uvicorn[standard]
