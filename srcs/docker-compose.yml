@@ -1,0 +1,26 @@
+services:
+  ai:
+    image: ai
+    build:
+      context: ./requirements/ai
+    container_name: ai
+    networks:
+      - intra
+    env_file:
+      - .env
+  mini7:
+    image: mini7
+    build:
+      context: ./requirements/mini7
+    container_name: mini7
+    networks:
+      - intra
+    env_file:
+      - .env
+    ports:
+      - $ENDPOINT_PORT:$ENDPOINT_PORT
+# volumes:
+
+networks:
+  intra:
+    driver: bridge
